@@ -7,7 +7,7 @@ php:
   - hhvm
 
 before_script:
-  - composer self-update
+  - sudo composer self-update
 
 script: phpunit
 

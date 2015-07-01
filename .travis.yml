@@ -1,15 +1,20 @@
 language: php
-sudo: true
+
 php:
+  - 5.5.9
   - 5.5
+  - 5.6
+  - hhvm
 
-before_script:
-  - /home/travis/.phpenv/versions/5.5/bin/composer self-update
-  - /home/travis/.phpenv/versions/5.5/bin/composer install --prefer-dist
-  - cp .env.example .env
+sudo: false
 
-script: phpunit
+install:
+  - travis_retry composer install --no-interaction --prefer-source
 
-notifications:
-    on_success: never
-    on_failure: never
+script:
+  - bash -c 'if [ "$TRAVIS_PHP_VERSION" == "hhvm" ]; then vendor/bin/phpunit; fi;'
+  - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then vendor/bin/phpunit --coverage-clover build/logs/clover.xml; fi;'
+
+after_script:
+  - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then wget https://scrutinizer-ci.com/ocular.phar; fi;'
+  - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml; fi;'

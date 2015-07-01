@@ -7,7 +7,7 @@ php:
   - hhvm
 
 before_script:
-  - /home/travis/.phpenv/versions/5.5/bin/composer self-update
+  - /home/travis/.phpenv/versions/5.5/bin/composer install --prefer-dist
 
 script: phpunit
 

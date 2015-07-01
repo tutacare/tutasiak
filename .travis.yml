@@ -7,7 +7,7 @@ php:
   - hhvm
 
 before_install:
-  - sudo apt-get install mcrypt php5-mcrypt
+  - sudo php5enmod mcrypt
   - sudo service apache2 restart
 
 before_script:

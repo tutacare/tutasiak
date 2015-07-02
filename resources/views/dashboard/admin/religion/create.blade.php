@@ -12,7 +12,7 @@
         				<div class="panel-body">
         					{!! Html::ul($errors->all()) !!}
 
-        					{!! Form::open(array('url' => 'dashboard/admin/religion')) !!}
+        					{!! Form::open(array('url' => 'dashboard/admin/religions')) !!}
 
         					<div class="form-group">
         					{!! Form::label('name', trans('tuta.name') .' *') !!}

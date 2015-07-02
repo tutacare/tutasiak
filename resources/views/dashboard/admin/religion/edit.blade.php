@@ -11,7 +11,7 @@
                 <div class="panel-body">
                   {!! Html::ul($errors->all()) !!}
 
-                  {!! Form::model($religion, array('route' => array('dashboard.admin.religion.update', $religion->id), 'method' => 'PUT')) !!}
+                  {!! Form::model($religion, array('route' => array('dashboard.admin.religions.update', $religion->id), 'method' => 'PUT')) !!}
 
                   <div class="form-group">
                   {!! Form::label('name', trans('tuta.name').' *') !!}

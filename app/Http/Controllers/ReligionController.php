@@ -48,7 +48,7 @@ class ReligionController extends Controller
         $religions->active = Input::get('active');
         $religions->save();
         Session::flash('message', 'You have successfully added religion');
-        return Redirect::to('dashboard/admin/religion');
+        return Redirect::to('dashboard/admin/religions');
     }
 
     /**
@@ -89,7 +89,7 @@ class ReligionController extends Controller
       $religions->active = Input::get('active');
       $religions->save();
       Session::flash('message', 'You have successfully updated religion');
-      return Redirect::to('dashboard/admin/religion');
+      return Redirect::to('dashboard/admin/religions');
     }
 
     /**
@@ -103,6 +103,6 @@ class ReligionController extends Controller
       $religions = Religion::find($id);
       $religions->delete();
       Session::flash('message', 'You have successfully deleted customer');
-      return Redirect::to('customers');
+      return Redirect::to('religions');
     }
 }

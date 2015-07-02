@@ -21,4 +21,6 @@ Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 Route::resource('dashboard', 'DashboardController');
-Route::resource('dashboard/admin/religion', 'ReligionController');
+Route::resource('dashboard/admin/religions', 'ReligionController');
+Route::resource('dashboard/admin/announcements', 'AnnouncementController');
+Route::resource('dashboard/admin/lecturers', 'LecturerController');

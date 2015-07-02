@@ -19,11 +19,16 @@ return [
     'role' => 'Role',
     'submit' => 'Submit',
     'update_user' => 'Update User',
+    'create_new' => 'Create New',
 
-    'religion' => 'Religion',
+    'religions' => 'Religions',
     'new_religion' => 'New Religion',
     'update_religion' => 'Update Religion',
-    
+
+    'announcements' => 'Announcements',
+
+    'lecturers' => 'Lecturers',
+
 
 
 ];

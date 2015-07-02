@@ -6,7 +6,7 @@
         <div class="col-md-8">
 
         <div class="col-md-12">
-            <h2>Religion <a class="btn btn-primary" href="{{ URL::to('dashboard/admin/religions/create') }}" role="button">Add New</a></h2>
+            <h2>Lecturer <a class="btn btn-primary" href="{{ URL::to('dashboard/admin/lecturers/create') }}" role="button">Add New</a></h2>
         </div>
         @if (Session::has('message'))
         <div class="col-md-12">
@@ -22,13 +22,13 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($religion as $value)
+    @foreach($lecturer as $value)
         <tr>
             <td>{{ $value->name }}</td>
             <td>{{ $value->active }}</td>
             <td>
-                <a class="btn btn-small btn-info" href="{{ URL::to('dashboard/admin/religions/' . $value->id . '/edit') }}">Edit</a>
-                {!! Form::open(array('url' => 'dashboard/admin/religions/' . $value->id, 'class' => 'pull-right')) !!}
+                <a class="btn btn-small btn-info" href="{{ URL::to('dashboard/admin/lecturers/' . $value->id . '/edit') }}">Edit</a>
+                {!! Form::open(array('url' => 'dashboard/admin/lecturters/' . $value->id, 'class' => 'pull-right')) !!}
                     {!! Form::hidden('_method', 'DELETE') !!}
                     {!! Form::submit('Delete', array('class' => 'btn btn-warning')) !!}
                 {!! Form::close() !!}

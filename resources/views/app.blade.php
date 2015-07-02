@@ -31,12 +31,11 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Master <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/dashboard/admin/religion') }}">{{trans('tuta.religion')}}</a></li>
-
-                              <li><a href="{{ url('/dashboard/users') }}">Users</a></li>
-
-                            <li class="divider"></li>
-                            <li><a href="{{ url('/auth/logout') }}">{{trans('tuta.logout')}}</a></li>
+                          <li><a href="{{ url('/dashboard/admin/announcements') }}">{{trans('tuta.announcements')}}</a></li>
+                          <li class="divider"></li>
+                          <li><a href="{{ url('/dashboard/admin/religions') }}">{{trans('tuta.religions')}}</a></li>
+                          <li class="divider"></li>
+                          <li><a href="{{ url('/dashboard/admin/lecturers') }}">{{trans('tuta.lecturers')}}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -46,7 +45,6 @@
                         <li><a href="{{ url('/auth/login') }}">{{trans('tuta.login')}}</a></li>
                         <li><a href="{{ url('/auth/register') }}">{{trans('tuta.register')}}</a></li>
                     @else
-                        <li><a href="{{ url('/deposit') }}">{{trans('tuta.balance')}} : {{ Auth::user()->balance }}</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">

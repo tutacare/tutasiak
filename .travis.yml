@@ -1,8 +1,0 @@
-language: php
-
-php:
-  - 5.5.9
-
-sudo: false
-
-script: php --version

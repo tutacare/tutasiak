@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Lecturer;
-use Input, Session, Hash, Redirect;
+use App\Day;
+use Input, Session, Redirect;
 
-class LecturerController extends Controller
+class DayController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class LecturerController extends Controller
      */
     public function index()
     {
-      $lecturers = Lecturer::all();
-      return view('dashboard.admin.lecturer.index', ['lecturer' => $lecturers]);
+      $days = Day::all();
+      return view('dashboard.admin.day.index', ['day' => $days]);
     }
 
     /**
@@ -29,7 +29,7 @@ class LecturerController extends Controller
      */
     public function create()
     {
-        return view('dashboard.admin.lecturer.create');
+        return view('dashboard.admin.day.create');
     }
 
     /**
@@ -39,15 +39,11 @@ class LecturerController extends Controller
      */
     public function store()
     {
-      $lecturers = new Lecturer;
-      $lecturers->name = Input::get('name');
-      $lecturers->address = Input::get('address');
-      $lecturers->email = Input::get('email');
-      $lecturers->password = Hash::make(Input::get('password'));
-      $lecturers->active = Input::get('active');
-      $lecturers->save();
-      Session::flash('message', 'You have successfully added lecturer');
-      return Redirect::to('dashboard/admin/lecturers');
+      $days = new day;
+      $days->day = Input::get('day');
+      $days->save();
+      Session::flash('message', 'You have successfully added day');
+      return Redirect::to('dashboard/admin/days');
     }
 
     /**

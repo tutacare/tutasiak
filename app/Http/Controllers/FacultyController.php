@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Lecturer;
-use Input, Session, Hash, Redirect;
+use App\Faculty;
+use Input, Session, Redirect;
 
-class LecturerController extends Controller
+class FacultyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class LecturerController extends Controller
      */
     public function index()
     {
-      $lecturers = Lecturer::all();
-      return view('dashboard.admin.lecturer.index', ['lecturer' => $lecturers]);
+      $faculties = Faculty::all();
+      return view('dashboard.admin.faculty.index', ['faculty' => $faculties]);
     }
 
     /**
@@ -29,7 +29,7 @@ class LecturerController extends Controller
      */
     public function create()
     {
-        return view('dashboard.admin.lecturer.create');
+        return view('dashboard.admin.faculty.create');
     }
 
     /**
@@ -39,15 +39,12 @@ class LecturerController extends Controller
      */
     public function store()
     {
-      $lecturers = new Lecturer;
-      $lecturers->name = Input::get('name');
-      $lecturers->address = Input::get('address');
-      $lecturers->email = Input::get('email');
-      $lecturers->password = Hash::make(Input::get('password'));
-      $lecturers->active = Input::get('active');
-      $lecturers->save();
-      Session::flash('message', 'You have successfully added lecturer');
-      return Redirect::to('dashboard/admin/lecturers');
+      $faculties = new Faculty;
+      $faculties->faculty_code = Input::get('faculty_code');
+      $faculties->faculty_name = Input::get('faculty_name');
+      $faculties->save();
+      Session::flash('message', 'You have successfully added faculty');
+      return Redirect::to('dashboard/admin/faculties');
     }
 
     /**

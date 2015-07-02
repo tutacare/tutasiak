@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TutaSIAK - Sistem Informasi Akademik</title>
+    <title>TutaSIAK - Academic Information System</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link href="{{ asset('/css/footer.css') }}" rel="stylesheet">
@@ -33,7 +33,9 @@
                         <ul class="dropdown-menu" role="menu">
                           <li><a href="{{ url('/dashboard/admin/announcements') }}">{{trans('tuta.announcements')}}</a></li>
                           <li class="divider"></li>
+                          <li><a href="{{ url('/dashboard/admin/days') }}">{{trans('tuta.days')}}</a></li>
                           <li><a href="{{ url('/dashboard/admin/religions') }}">{{trans('tuta.religions')}}</a></li>
+                          <li><a href="{{ url('/dashboard/admin/faculties') }}">{{trans('tuta.faculties')}}</a></li>
                           <li class="divider"></li>
                           <li><a href="{{ url('/dashboard/admin/lecturers') }}">{{trans('tuta.lecturers')}}</a></li>
                         </ul>

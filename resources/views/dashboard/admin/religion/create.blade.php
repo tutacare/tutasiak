@@ -20,6 +20,7 @@
         					</div>
 
                   <div class="form-group">
+                    {!! Form::label('active', 'Active') !!}
                     <label class="radio-inline">
                       {!! Form::radio('active', 'Y', true) !!} Yes
                     </label>

@@ -28,6 +28,16 @@ return [
     'announcements' => 'Announcements',
 
     'lecturers' => 'Lecturers',
+    'new_lecturer' => 'New Lecturer',
+
+    'faculties' => 'Faculties',
+    'new_faculty' => 'New Faculty',
+    'faculty_code' => 'Faculty Code',
+    'faculty_name' => 'Faculty Name',
+
+    'days' => 'Days',
+    'day' => 'Day',
+    'new_day' => 'New Day',
 
 
 

@@ -24,3 +24,5 @@ Route::resource('dashboard', 'DashboardController');
 Route::resource('dashboard/admin/religions', 'ReligionController');
 Route::resource('dashboard/admin/announcements', 'AnnouncementController');
 Route::resource('dashboard/admin/lecturers', 'LecturerController');
+Route::resource('dashboard/admin/faculties', 'FacultyController');
+Route::resource('dashboard/admin/days', 'DayController');

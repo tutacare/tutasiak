@@ -31,6 +31,7 @@ return [
     'new_lecturer' => 'New Lecturer',
 
     'faculties' => 'Faculties',
+    'faculty' => 'Faculty',
     'new_faculty' => 'New Faculty',
     'faculty_code' => 'Faculty Code',
     'faculty_name' => 'Faculty Name',
@@ -38,6 +39,15 @@ return [
     'days' => 'Days',
     'day' => 'Day',
     'new_day' => 'New Day',
+
+    'exam_types' => 'Exam Types',
+    'new_type_of_exam' => 'New Type of Exam',
+
+    'studies' => 'Studies',
+    'new_study' => 'New Study',
+    'study_code' => 'Study Code',
+    'study_name' => 'Study Name',
+    'stage' => 'Stage',
 
 
 

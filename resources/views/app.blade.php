@@ -34,7 +34,10 @@
                           <li><a href="{{ url('/dashboard/admin/announcements') }}">{{trans('tuta.announcements')}}</a></li>
                           <li class="divider"></li>
                           <li><a href="{{ url('/dashboard/admin/days') }}">{{trans('tuta.days')}}</a></li>
+                          <li><a href="{{ url('/dashboard/admin/exam-types') }}">{{trans('tuta.exam_types')}}</a></li>
                           <li><a href="{{ url('/dashboard/admin/religions') }}">{{trans('tuta.religions')}}</a></li>
+                          <li class="divider"></li>
+                          <li><a href="{{ url('/dashboard/admin/studies') }}">{{trans('tuta.studies')}}</a></li>
                           <li><a href="{{ url('/dashboard/admin/faculties') }}">{{trans('tuta.faculties')}}</a></li>
                           <li class="divider"></li>
                           <li><a href="{{ url('/dashboard/admin/lecturers') }}">{{trans('tuta.lecturers')}}</a></li>

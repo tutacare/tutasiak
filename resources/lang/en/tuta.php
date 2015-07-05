@@ -33,21 +33,31 @@ return [
     'faculties' => 'Faculties',
     'faculty' => 'Faculty',
     'new_faculty' => 'New Faculty',
+    'update_faculty' => 'Update Faculty',
     'faculty_code' => 'Faculty Code',
     'faculty_name' => 'Faculty Name',
 
     'days' => 'Days',
     'day' => 'Day',
     'new_day' => 'New Day',
+    'update_day' => 'Update Day',
 
     'exam_types' => 'Exam Types',
     'new_type_of_exam' => 'New Type of Exam',
+    'update_type_of_exam' => 'Update Type of Exam',
 
     'studies' => 'Studies',
     'new_study' => 'New Study',
+    'update_study' => 'Update Study',
     'study_code' => 'Study Code',
     'study_name' => 'Study Name',
     'stage' => 'Stage',
+
+    'students' => 'Students',
+
+    'program_studies' => 'Program Studies',
+    'new_program_study' => 'New Program Study',
+    'update_program_study' => 'Update Program Study',
 
 
 

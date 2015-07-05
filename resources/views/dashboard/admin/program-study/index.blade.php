@@ -6,7 +6,7 @@
         <div class="col-md-8">
 
         <div class="col-md-12">
-            <h2>Faculty <a class="btn btn-primary" href="{{ URL::to('dashboard/admin/faculties/create') }}" role="button">Add New</a></h2>
+            <h2>Program Study <a class="btn btn-primary" href="{{ URL::to('dashboard/admin/program-studies/create') }}" role="button">Add New</a></h2>
         </div>
         @if (Session::has('message'))
         <div class="col-md-12">
@@ -16,19 +16,17 @@
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <td>Faculty Code</td>
-            <td>Faculty Name</td>
+            <td>Name</td>
             <td>&nbsp;</td>
         </tr>
     </thead>
     <tbody>
-    @foreach($faculty as $value)
+    @foreach($programStudy as $value)
         <tr>
-            <td>{{ $value->faculty_code }}</td>
-            <td>{{ $value->faculty_name }}</td>
+            <td>{{ $value->name }}</td>
             <td>
-                <a class="btn btn-small btn-info" href="{{ URL::to('dashboard/admin/faculties/' . $value->faculty_code . '/edit') }}">Edit</a>
-                {!! Form::open(array('url' => 'dashboard/admin/faculties/' . $value->faculty_code, 'class' => 'pull-right')) !!}
+                <a class="btn btn-small btn-info" href="{{ URL::to('dashboard/admin/program-studies/' . $value->id . '/edit') }}">Edit</a>
+                {!! Form::open(array('url' => 'dashboard/admin/program-studies/' . $value->id, 'class' => 'pull-right')) !!}
                     {!! Form::hidden('_method', 'DELETE') !!}
                     {!! Form::submit('Delete', array('class' => 'btn btn-warning')) !!}
                 {!! Form::close() !!}

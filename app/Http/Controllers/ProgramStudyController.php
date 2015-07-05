@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Day;
+use App\ProgramStudy;
 use Input, Session, Redirect;
 
-class DayController extends Controller
+class ProgramStudyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class DayController extends Controller
      */
     public function index()
     {
-      $days = Day::all();
-      return view('dashboard.admin.day.index', ['day' => $days]);
+      $programStudies = ProgramStudy::all();
+      return view('dashboard.admin.program-study.index', ['programStudy' => $programStudies]);
     }
 
     /**
@@ -29,7 +29,7 @@ class DayController extends Controller
      */
     public function create()
     {
-        return view('dashboard.admin.day.create');
+        return view('dashboard.admin.program-study.create');
     }
 
     /**
@@ -39,11 +39,11 @@ class DayController extends Controller
      */
     public function store()
     {
-      $days = new day;
-      $days->day = Input::get('day');
-      $days->save();
-      Session::flash('message', 'You have successfully added day');
-      return Redirect::to('dashboard/admin/days');
+      $programStudies = new ProgramStudy;
+      $programStudies->name = Input::get('name');
+      $programStudies->save();
+      Session::flash('message', 'You have successfully added program study');
+      return Redirect::to('dashboard/admin/program-studies');
     }
 
     /**
@@ -65,9 +65,9 @@ class DayController extends Controller
      */
     public function edit($id)
     {
-      $days = Day::find($id);
-      return view('dashboard.admin.day.edit', [
-        'day' => $days
+      $programStudies = ProgramStudy::find($id);
+      return view('dashboard.admin.program-study.edit', [
+        'programStudy' => $programStudies
         ]);
     }
 
@@ -79,11 +79,11 @@ class DayController extends Controller
      */
     public function update($id)
     {
-      $days = Day::find($id);
-      $days->day = Input::get('day');
-      $days->save();
-      Session::flash('message', 'You have successfully updated day');
-      return Redirect::to('dashboard/admin/days');
+      $programStudies = ProgramStudy::find($id);
+      $programStudies->name = Input::get('name');
+      $programStudies->save();
+      Session::flash('message', 'You have successfully updated program study');
+      return Redirect::to('dashboard/admin/program-studies');
     }
 
     /**
@@ -94,9 +94,9 @@ class DayController extends Controller
      */
     public function destroy($id)
     {
-      $days = Day::find($id);
-      $days->delete();
-      Session::flash('message', 'You have successfully deleted day');
-      return Redirect::to('dashboard/admin/days');
+      $programStudies = ProgramStudy::find($id);
+      $programStudies->delete();
+      Session::flash('message', 'You have successfully deleted program study');
+      return Redirect::to('dashboard/admin/program-studies');
     }
 }

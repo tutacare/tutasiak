@@ -28,3 +28,5 @@ Route::resource('dashboard/admin/faculties', 'FacultyController');
 Route::resource('dashboard/admin/days', 'DayController');
 Route::resource('dashboard/admin/exam-types', 'ExamTypeController');
 Route::resource('dashboard/admin/studies', 'StudyController');
+Route::resource('dashboard/admin/students', 'StudentController');
+Route::resource('dashboard/admin/program-studies', 'ProgramStudyController');

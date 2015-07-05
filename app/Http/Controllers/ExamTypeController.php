@@ -65,7 +65,8 @@ class ExamTypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $examTypes = ExamType::find($id);
+        return view('dashboard.admin.exam-type.edit', ['examType' => $examTypes]);
     }
 
     /**
@@ -76,7 +77,11 @@ class ExamTypeController extends Controller
      */
     public function update($id)
     {
-        //
+      $examTypes = ExamType::find($id);
+      $examTypes->name = Input::get('name');
+      $examTypes->save();
+      Session::flash('message', 'You have successfully updated type of exam');
+      return Redirect::to('dashboard/admin/exam-types');
     }
 
     /**
@@ -87,6 +92,9 @@ class ExamTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $examTypes = ExamType::find($id);
+      $examTypes->delete();
+      Session::flash('message', 'You have successfully deleted type of exam');
+      return Redirect::to('dashboard/admin/exam-types');
     }
 }

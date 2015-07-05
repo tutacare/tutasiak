@@ -28,7 +28,7 @@
         <tr>
             <td>{{ $value->study_code }}</td>
             <td>{{ $value->study_name }}</td>
-            <td>{{ $value->faculty_code }}</td>
+            <td>{{ $value->faculty->faculty_name }}</td>
             <td>{{ $value->stage }}</td>
             <td>
                 <a class="btn btn-small btn-info" href="{{ URL::to('dashboard/admin/studies/' . $value->id . '/edit') }}">Edit</a>

@@ -66,7 +66,10 @@ class FacultyController extends Controller
      */
     public function edit($id)
     {
-        //
+      $faculties = Faculty::where('faculty_code', $id)->first();
+      return view('dashboard.admin.faculty.edit', [
+        'faculty' => $faculties
+        ]);
     }
 
     /**
@@ -77,7 +80,12 @@ class FacultyController extends Controller
      */
     public function update($id)
     {
-        //
+      $faculties = Faculty::where('faculty_code', $id)->first();
+      $faculties->faculty_code = Input::get('faculty_code');
+      $faculties->faculty_name = Input::get('faculty_name');
+      $faculties->save();
+      Session::flash('message', 'You have successfully updated faculty');
+      return Redirect::to('dashboard/admin/faculties');
     }
 
     /**
@@ -88,6 +96,8 @@ class FacultyController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $faculties = Faculty::where('faculty_code', $id)->delete();
+      Session::flash('message', 'You have successfully deleted faculty');
+      return Redirect::to('dashboard/admin/faculties');
     }
 }

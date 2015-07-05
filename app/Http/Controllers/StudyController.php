@@ -69,7 +69,12 @@ class StudyController extends Controller
      */
     public function edit($id)
     {
-        //
+      $studies = Study::find($id);
+      $faculties = Faculty::lists('faculty_name', 'faculty_code');
+      return view('dashboard.admin.study.edit', [
+        'study' => $studies,
+        'faculty' => $faculties
+        ]);
     }
 
     /**
@@ -80,7 +85,14 @@ class StudyController extends Controller
      */
     public function update($id)
     {
-        //
+      $studies = Study::find($id);
+      $studies->study_code = Input::get('study_code');
+      $studies->study_name = Input::get('study_name');
+      $studies->faculty_code = Input::get('faculty_code');
+      $studies->stage = Input::get('stage');
+      $studies->save();
+      Session::flash('message', 'You have successfully updated study');
+      return Redirect::to('dashboard/admin/studies');
     }
 
     /**
@@ -91,6 +103,9 @@ class StudyController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $studies = Study::find($id);
+      $studies->delete();
+      Session::flash('message', 'You have successfully deleted study');
+      return Redirect::to('dashboard/admin/studies');
     }
 }

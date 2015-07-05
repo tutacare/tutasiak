@@ -103,6 +103,6 @@ class ReligionController extends Controller
       $religions = Religion::find($id);
       $religions->delete();
       Session::flash('message', 'You have successfully deleted customer');
-      return Redirect::to('religions');
+      return Redirect::to('dashboard/admin/religions');
     }
 }

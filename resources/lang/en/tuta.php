@@ -59,6 +59,11 @@ return [
     'new_program_study' => 'New Program Study',
     'update_program_study' => 'Update Program Study',
 
+    'academic_registrations' => 'Academic Registrations',
+    'new_academic_registration' => 'New Academic Registration',
+    'academic_year' => 'Academic Year',
+    'update_academic_registration' => 'Update Academic Registration',
+
 
 
 ];

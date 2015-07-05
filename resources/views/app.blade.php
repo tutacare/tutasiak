@@ -33,6 +33,7 @@
                         <ul class="dropdown-menu" role="menu">
                           <li><a href="{{ url('/dashboard/admin/announcements') }}">{{trans('tuta.announcements')}}</a></li>
                           <li class="divider"></li>
+                          <li><a href="{{ url('/dashboard/admin/academic-registrations') }}">{{trans('tuta.academic_registrations')}}</a></li>
                           <li><a href="{{ url('/dashboard/admin/days') }}">{{trans('tuta.days')}}</a></li>
                           <li><a href="{{ url('/dashboard/admin/exam-types') }}">{{trans('tuta.exam_types')}}</a></li>
                           <li><a href="{{ url('/dashboard/admin/religions') }}">{{trans('tuta.religions')}}</a></li>

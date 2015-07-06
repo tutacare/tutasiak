@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Announcement;
 
 class DashboardController extends Controller
 {
@@ -16,7 +17,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.home.index');
+        $announcements = Announcement::all();
+        return view('dashboard.home.index', [ 'announcement' => $announcements ]);
     }
 
     /**

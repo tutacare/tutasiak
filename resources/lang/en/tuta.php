@@ -64,6 +64,17 @@ return [
     'academic_year' => 'Academic Year',
     'update_academic_registration' => 'Update Academic Registration',
 
+    'courses' => 'Courses',
+    'new_course' => 'New Course',
+    'update_course' => 'Update Course',
+
+    'program_study' => 'Program Study',
+    'course_code' => 'Course Code',
+    'course_name' => 'Course Name',
+    'semester' => 'Semester',
+    'credits' => 'Credits',
+    'study' => 'Study',
+
 
 
 ];

@@ -41,6 +41,7 @@
                           <li><a href="{{ url('/dashboard/admin/faculties') }}">{{trans('tuta.faculties')}}</a></li>
                           <li><a href="{{ url('/dashboard/admin/program-studies') }}">{{trans('tuta.program_studies')}}</a></li>
                           <li><a href="{{ url('/dashboard/admin/studies') }}">{{trans('tuta.studies')}}</a></li>
+                          <li><a href="{{ url('/dashboard/admin/courses') }}">{{trans('tuta.courses')}}</a></li>
                           <li class="divider"></li>
                           <li><a href="{{ url('/dashboard/admin/lecturers') }}">{{trans('tuta.lecturers')}}</a></li>
                           <li><a href="{{ url('/dashboard/admin/students') }}">{{trans('tuta.students')}}</a></li>

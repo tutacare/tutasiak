@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
+Route::get('/', 'DashboardController@index');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -31,3 +29,4 @@ Route::resource('dashboard/admin/studies', 'StudyController');
 Route::resource('dashboard/admin/students', 'StudentController');
 Route::resource('dashboard/admin/program-studies', 'ProgramStudyController');
 Route::resource('dashboard/admin/academic-registrations', 'AcademicRegistrationController');
+Route::resource('dashboard/admin/courses', 'CourseController');

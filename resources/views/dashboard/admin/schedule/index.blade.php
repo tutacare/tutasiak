@@ -1,10 +1,9 @@
 @extends('app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-8">
-
+        <div class="col-md-12">
         <div class="col-md-12">
             <h2>Schedule <a class="btn btn-primary" href="{{ URL::to('dashboard/admin/schedules/create') }}" role="button">Add New</a></h2>
         </div>
@@ -39,13 +38,13 @@
     <tbody>
     @foreach($schedule as $value)
         <tr>
-          <td>{{$value->academic_year_id}}</td>
-          <td>{{$value->program_study_id}}</td>
-          <td>{{$value->course_id}}</td>
-          <td>{{$value->study_id}}</td>
+          <td>{{$value->academicRegistration->academic_year}}</td>
+          <td>{{$value->programStudy->name}}</td>
+          <td>{{$value->course->course_name}}</td>
+          <td>{{$value->study->study_name}}</td>
           <td>{{$value->class_room}}</td>
-          <td>{{$value->lecturer_id}}</td>
-          <td>{{$value->day_id}}</td>
+          <td>{{$value->lecturer->name}}</td>
+          <td>{{$value->day->day}}</td>
           <td>{{$value->start_time}}</td>
           <td>{{$value->finish_time}}</td>
           <td>{{$value->date_midterm_exam}}</td>

@@ -1,2 +1,2 @@
-# tutasiak
-Sistem Informasi Akademik Menggunakan Laravel
+# TutaSIAK
+Academic Information System Using Laravel

@@ -30,3 +30,4 @@ Route::resource('dashboard/admin/students', 'StudentController');
 Route::resource('dashboard/admin/program-studies', 'ProgramStudyController');
 Route::resource('dashboard/admin/academic-registrations', 'AcademicRegistrationController');
 Route::resource('dashboard/admin/courses', 'CourseController');
+Route::resource('dashboard/admin/schedules', 'ScheduleController');

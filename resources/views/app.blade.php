@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link href="{{ asset('/css/footer.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  	<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.ui.timepicker.addon/1.4.5/jquery-ui-timepicker-addon.min.css">
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="http://tutahosting.net/wp-content/uploads/2015/01/tutaico.png" type="image/x-icon" />
@@ -22,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://tutacare.github.io/tutapos/">TutaSIAK</a>
+                <a class="navbar-brand" href="http://tutacare.github.io/tutasiak/">TutaSIAK</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -42,6 +44,7 @@
                           <li><a href="{{ url('/dashboard/admin/program-studies') }}">{{trans('tuta.program_studies')}}</a></li>
                           <li><a href="{{ url('/dashboard/admin/studies') }}">{{trans('tuta.studies')}}</a></li>
                           <li><a href="{{ url('/dashboard/admin/courses') }}">{{trans('tuta.courses')}}</a></li>
+                          <li><a href="{{ url('/dashboard/admin/schedules') }}">{{trans('tuta.schedules')}}</a></li>
                           <li class="divider"></li>
                           <li><a href="{{ url('/dashboard/admin/lecturers') }}">{{trans('tuta.lecturers')}}</a></li>
                           <li><a href="{{ url('/dashboard/admin/students') }}">{{trans('tuta.students')}}</a></li>
@@ -70,16 +73,35 @@
             </div>
         </div>
     </nav>
-
     @yield('content')
     <footer class="footer hidden-print">
       <div class="container">
-        <p class="text-muted">You are using <a href="http://tutacare.github.io/tutapos">TutaSIAK</a> v0.1-alpha by <a href="https://twitter.com/tutacare">Irfan Mahfudz Guntur</a>.
+        <p class="text-muted">You are using <a href="http://tutacare.github.io/tutasiak">TutaSIAK</a> v0.1-alpha by <a href="https://twitter.com/tutacare">Irfan Mahfudz Guntur</a>.
         </p>
       </div>
     </footer>
     <!-- Scripts -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  	<script src="//cdn.jsdelivr.net/jquery.ui.timepicker.addon/1.4.5/jquery-ui-timepicker-addon.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script>
+  	$(function() {
+      $( "#date_midterm_exam" ).datepicker(
+        { dateFormat: 'dd-mm-yy',
+    			changeMonth: true,
+          changeYear: true});
+      $( "#date_final_exam" ).datepicker(
+        { dateFormat: 'dd-mm-yy',
+    			changeMonth: true,
+          changeYear: true});
+    	$('#start_time').timepicker();
+      $('#finish_time').timepicker();
+      $('#start_midterm_exam_time').timepicker();
+      $('#finish_midterm_exam_time').timepicker();
+      $('#start_final_exam_time').timepicker();
+      $('#finish_final_exam_time').timepicker();
+  	});
+  	</script>
 </body>
 </html>

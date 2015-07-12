@@ -29,6 +29,7 @@ return [
 
     'lecturers' => 'Lecturers',
     'new_lecturer' => 'New Lecturer',
+    'lecturer' => 'Lecturer',
 
     'faculties' => 'Faculties',
     'faculty' => 'Faculty',
@@ -65,6 +66,7 @@ return [
     'update_academic_registration' => 'Update Academic Registration',
 
     'courses' => 'Courses',
+    'course' => 'Course',
     'new_course' => 'New Course',
     'update_course' => 'Update Course',
 
@@ -74,6 +76,22 @@ return [
     'semester' => 'Semester',
     'credits' => 'Credits',
     'study' => 'Study',
+
+    'schedules' => 'Schedules',
+    'new_schedule' => 'New Schedule',
+
+    'start_time' => 'Start Time',
+    'finish_time' => 'Finish Time',
+    'date_midterm_exam' => 'Date Midterm Exam',
+    'start_midterm_exam_time' => 'Start Midterm Exam Time',
+    'finish_midterm_exam_time' => 'Finish Midterm Exam Time',
+    'midterm_exam_room' => 'Midterm Exam Room',
+    'date_final_exam' => 'Date Final Exam',
+    'start_final_exam_time' => 'Start Final Exam Time',
+    'finish_final_exam_time' => 'Finish Final Exam Time',
+    'final_exam_room' => 'Final Exam Room',
+
+    'class_room' => 'Class Room',
 
 
 

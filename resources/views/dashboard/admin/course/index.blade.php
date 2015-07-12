@@ -16,7 +16,7 @@
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <td>Program Study ID</td>
+            <td>Program Study</td>
             <td>Course Code</td>
             <td>Course Name</td>
             <td>Semester</td>
@@ -29,13 +29,13 @@
     <tbody>
     @foreach($course as $value)
         <tr>
-          <td>{{$value->program_study_id}}</td>
+          <td>{{$value->programStudy->name}}</td>
           <td>{{$value->course_code}}</td>
           <td>{{$value->course_name}}</td>
           <td>{{$value->semester}}</td>
           <td>{{$value->credits}}</td>
-          <td>{{$value->faculty_code}}</td>
-          <td>{{$value->study_id}}</td>
+          <td>{{$value->faculty->faculty_name}}</td>
+          <td>{{$value->study->study_name}}</td>
             <td>
                 <a class="btn btn-small btn-info" href="{{ URL::to('dashboard/admin/courses/' . $value->id . '/edit') }}">Edit</a>
                 {!! Form::open(array('url' => 'dashboard/admin/courses/' . $value->id, 'class' => 'pull-right')) !!}

@@ -54,8 +54,6 @@ class ScheduleController extends Controller
      */
     public function store()
     {
-      echo Input::get('start_time');
-      /*
       $schedules = new Schedule;
       $schedules->academic_year_id = Input::get('academic_year_id');
       $schedules->program_study_id = Input::get('program_study_id');
@@ -65,10 +63,18 @@ class ScheduleController extends Controller
       $schedules->lecturer_id = Input::get('lecturer_id');
       $schedules->day_id = Input::get('day_id');
       $schedules->start_time = Input::get('start_time');
+      $schedules->finish_time = Input::get('finish_time');
+      $schedules->date_midterm_exam = date("Y-m-d", strtotime(Input::get('date_midterm_exam')));;
+      $schedules->start_midterm_exam_time = Input::get('start_midterm_exam_time');
+      $schedules->finish_midterm_exam_time = Input::get('finish_midterm_exam_time');
+      $schedules->midterm_exam_room = Input::get('midterm_exam_room');
+      $schedules->date_final_exam = date("Y-m-d", strtotime(Input::get('date_final_exam')));
+      $schedules->start_final_exam_time = Input::get('start_final_exam_time');
+      $schedules->finish_final_exam_time = Input::get('finish_final_exam_time');
+      $schedules->final_exam_room = Input::get('final_exam_room');
       $schedules->save();
       Session::flash('message', 'You have successfully added schedule');
       return Redirect::to('dashboard/admin/schedules');
-      */
     }
 
     /**

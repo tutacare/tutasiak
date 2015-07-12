@@ -39,12 +39,12 @@
     <tbody>
     @foreach($schedule as $value)
         <tr>
-          <td>{{$value->academic_year}}</td>
-          <td>{{$value->program_study}}</td>
+          <td>{{$value->academic_year_id}}</td>
+          <td>{{$value->program_study_id}}</td>
           <td>{{$value->course_id}}</td>
           <td>{{$value->study_id}}</td>
           <td>{{$value->class_room}}</td>
-          <td>{{$value->lecture_id}}</td>
+          <td>{{$value->lecturer_id}}</td>
           <td>{{$value->day_id}}</td>
           <td>{{$value->start_time}}</td>
           <td>{{$value->finish_time}}</td>

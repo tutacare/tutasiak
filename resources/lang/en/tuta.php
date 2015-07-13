@@ -79,6 +79,7 @@ return [
 
     'schedules' => 'Schedules',
     'new_schedule' => 'New Schedule',
+    'update_schedule' => 'Update Schedule',
 
     'start_time' => 'Start Time',
     'finish_time' => 'Finish Time',

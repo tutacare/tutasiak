@@ -96,7 +96,22 @@ class ScheduleController extends Controller
      */
     public function edit($id)
     {
-        //
+      $schedules = Schedule::find($id);
+      $academicRegistrations = AcademicRegistration::lists('academic_year', 'id');
+      $programStudies = ProgramStudy::lists('name', 'id');
+      $courses = Course::lists('course_name', 'id');
+      $studies = Study::lists('study_name', 'id');
+      $lecturers = Lecturer::lists('name', 'id');
+      $days = Day::lists('day', 'id');
+      return view('dashboard.admin.schedule.edit', [
+        'schedule' => $schedules,
+        'academicRegistration' => $academicRegistrations,
+        'programStudy' => $programStudies,
+        'course' => $courses,
+        'study' => $studies,
+        'lecturer' => $lecturers,
+        'day' => $days
+        ]);
     }
 
     /**

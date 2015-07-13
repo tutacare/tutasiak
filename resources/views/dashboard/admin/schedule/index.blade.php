@@ -15,51 +15,53 @@
 <table class="table table-bordered table-responsive">
     <thead>
         <tr>
-            <td>Academic Year</td>
-            <td>Program Study</td>
-            <td>course id</td>
-            <td>study id</td>
-            <td>class room</td>
-            <td>lecture id</td>
-            <td>day id</td>
-            <td>start time</td>
-            <td>finish time</td>
-            <td>date midterm exam</td>
-            <td>start midterm exam time</td>
-            <td>finish midterm exam time</td>
-            <td>midterm exam room</td>
-            <td>date final exam</td>
-            <td>start final exam time</td>
-            <td>finish final exam time</td>
-            <td>final exam room</td>
-            <td>&nbsp;</td>
+            <td><small>Academic Year</small></td>
+            <td><small>Program Study</small></td>
+            <td><small>Course</small></td>
+            <td><small>Study</small></td>
+            <td><small>Class Room</small></td>
+            <td><small>Lecturer</small></td>
+            <td><small>Day</small></td>
+            <td><small>Start Time</small></td>
+            <td><small>Finish Time</small></td>
+            <td><small>Date Midterm Exam</small></td>
+            <td><small>Start Midterm Exam Time</small></td>
+            <td><small>Finish Midterm Exam Time</small></td>
+            <td><small>Midterm Exam Room</small></td>
+            <td><small>Date Final Exam</small></td>
+            <td><small>Start Final Exam Time</small></td>
+            <td><small>Finish Final Exam Time</small></td>
+            <td><small>Final Exam Room</small></td>
+            <td colspan="2">&nbsp;</td>
         </tr>
     </thead>
     <tbody>
     @foreach($schedule as $value)
         <tr>
-          <td>{{$value->academicRegistration->academic_year}}</td>
-          <td>{{$value->programStudy->name}}</td>
-          <td>{{$value->course->course_name}}</td>
-          <td>{{$value->study->study_name}}</td>
-          <td>{{$value->class_room}}</td>
-          <td>{{$value->lecturer->name}}</td>
-          <td>{{$value->day->day}}</td>
-          <td>{{ date('H:i', strtotime($value->start_time)) }}</td>
-          <td>{{ date('H:i', strtotime($value->finish_time)) }}</td>
-          <td>{{ date('d-m-Y', strtotime($value->date_midterm_exam)) }}</td>
-          <td>{{ date('H:i', strtotime($value->start_midterm_exam_time)) }}</td>
-          <td>{{ date('H:i', strtotime($value->finish_midterm_exam_time)) }}</td>
-          <td>{{$value->midterm_exam_room}}</td>
-          <td>{{ date('d-m-Y', strtotime($value->date_final_exam)) }}</td>
-          <td>{{ date('H:i', strtotime($value->start_final_exam_time)) }}</td>
-          <td>{{ date('H:i', strtotime($value->finish_final_exam_time)) }}</td>
-          <td>{{$value->final_exam_room}}</td>
+          <td><small>{{$value->academicRegistration->academic_year}}</small></td>
+          <td><small>{{$value->programStudy->name}}</small></td>
+          <td><small>{{$value->course->course_name}}</small></td>
+          <td><small>{{$value->study->study_name}}</small></td>
+          <td><small>{{$value->class_room}}</small></td>
+          <td><small>{{$value->lecturer->name}}</small></td>
+          <td><small>{{$value->day->day}}</small></td>
+          <td><small>{{ date('H:i', strtotime($value->start_time)) }}</small></td>
+          <td><small>{{ date('H:i', strtotime($value->finish_time)) }}</small></td>
+          <td><small>{{ date('d-m-Y', strtotime($value->date_midterm_exam)) }}</small></td>
+          <td><small>{{ date('H:i', strtotime($value->start_midterm_exam_time)) }}</small></td>
+          <td><small>{{ date('H:i', strtotime($value->finish_midterm_exam_time)) }}</small></td>
+          <td><small>{{$value->midterm_exam_room}}</small></td>
+          <td><small>{{ date('d-m-Y', strtotime($value->date_final_exam)) }}</small></td>
+          <td><small>{{ date('H:i', strtotime($value->start_final_exam_time)) }}</small></td>
+          <td><small>{{ date('H:i', strtotime($value->finish_final_exam_time)) }}</small></td>
+          <td><small>{{$value->final_exam_room}}</small></td>
             <td>
-                <a class="btn btn-small btn-info" href="{{ URL::to('dashboard/admin/schedules/' . $value->id . '/edit') }}">Edit</a>
+                <a class="btn btn-xs btn-info" href="{{ URL::to('dashboard/admin/schedules/' . $value->id . '/edit') }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+            </td>
+            <td>
                 {!! Form::open(array('url' => 'dashboard/admin/schedules/' . $value->id, 'class' => 'pull-right')) !!}
                     {!! Form::hidden('_method', 'DELETE') !!}
-                    {!! Form::submit('Delete', array('class' => 'btn btn-warning')) !!}
+                    <button class="btn btn-xs btn-warning" type="submit"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
                 {!! Form::close() !!}
             </td>
         </tr>

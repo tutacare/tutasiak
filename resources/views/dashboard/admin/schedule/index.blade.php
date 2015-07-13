@@ -45,15 +45,15 @@
           <td>{{$value->class_room}}</td>
           <td>{{$value->lecturer->name}}</td>
           <td>{{$value->day->day}}</td>
-          <td>{{$value->start_time}}</td>
-          <td>{{$value->finish_time}}</td>
-          <td>{{$value->date_midterm_exam}}</td>
-          <td>{{$value->start_midterm_exam_time}}</td>
-          <td>{{$value->finish_midterm_exam_time}}</td>
+          <td>{{ date('H:i', strtotime($value->start_time)) }}</td>
+          <td>{{ date('H:i', strtotime($value->finish_time)) }}</td>
+          <td>{{ date('d-m-Y', strtotime($value->date_midterm_exam)) }}</td>
+          <td>{{ date('H:i', strtotime($value->start_midterm_exam_time)) }}</td>
+          <td>{{ date('H:i', strtotime($value->finish_midterm_exam_time)) }}</td>
           <td>{{$value->midterm_exam_room}}</td>
-          <td>{{$value->date_final_exam}}</td>
-          <td>{{$value->start_final_exam_time}}</td>
-          <td>{{$value->finish_final_exam_time}}</td>
+          <td>{{ date('d-m-Y', strtotime($value->date_final_exam)) }}</td>
+          <td>{{ date('H:i', strtotime($value->start_final_exam_time)) }}</td>
+          <td>{{ date('H:i', strtotime($value->finish_final_exam_time)) }}</td>
           <td>{{$value->final_exam_room}}</td>
             <td>
                 <a class="btn btn-small btn-info" href="{{ URL::to('dashboard/admin/schedules/' . $value->id . '/edit') }}">Edit</a>

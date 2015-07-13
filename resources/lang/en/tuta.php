@@ -22,6 +22,7 @@ return [
     'create_new' => 'Create New',
 
     'religions' => 'Religions',
+    'religion' => 'Religion',
     'new_religion' => 'New Religion',
     'update_religion' => 'Update Religion',
 
@@ -55,6 +56,9 @@ return [
     'stage' => 'Stage',
 
     'students' => 'Students',
+    'new_student' => 'New Student',
+    'nim' => 'NIM',
+    'classroom' => 'Class Room',
 
     'program_studies' => 'Program Studies',
     'new_program_study' => 'New Program Study',

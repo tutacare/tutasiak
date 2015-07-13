@@ -14,11 +14,11 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('nim', 20);
+          $table->string('nim', 20)->unique();
           $table->string('name');
           $table->string('classroom', 5);
           $table->string('faculty_code', 10);
-          $table->string('study_code', 11);
+          $table->integer('study_id')->unsigned();
           $table->integer('program_study_id')->unsigned();
           $table->integer('academic_registration_id')->unsigned();
           $table->string('email')->unique();
@@ -29,7 +29,7 @@ class CreateStudentsTable extends Migration
           $table->string('comments', 255);
           $table->enum('active', ['Y', 'N']);
           $table->rememberToken();
-            $table->timestamps();
+          $table->timestamps();
         });
     }
 

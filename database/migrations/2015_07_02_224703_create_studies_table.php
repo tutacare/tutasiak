@@ -14,7 +14,7 @@ class CreateStudiesTable extends Migration
     {
         Schema::create('studies', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('study_code', 11);
+            $table->string('study_code', 11)->unique();
             $table->string('study_name', 100);
             $table->string('faculty_code', 10);
             $table->string('stage', 15);

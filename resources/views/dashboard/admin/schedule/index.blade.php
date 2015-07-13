@@ -61,7 +61,7 @@
             <td>
                 {!! Form::open(array('url' => 'dashboard/admin/schedules/' . $value->id, 'class' => 'pull-right')) !!}
                     {!! Form::hidden('_method', 'DELETE') !!}
-                    <button class="btn btn-xs btn-warning" type="submit"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                    <button class="btn btn-xs btn-danger" type="submit"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
                 {!! Form::close() !!}
             </td>
         </tr>

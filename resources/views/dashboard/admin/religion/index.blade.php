@@ -18,7 +18,7 @@
         <tr>
             <td>Name</td>
             <td>Active</td>
-            <td>&nbsp;</td>
+            <td colspan="2">&nbsp;</td>
         </tr>
     </thead>
     <tbody>
@@ -27,10 +27,12 @@
             <td>{{ $value->name }}</td>
             <td>{{ $value->active }}</td>
             <td>
-                <a class="btn btn-small btn-info" href="{{ URL::to('dashboard/admin/religions/' . $value->id . '/edit') }}">Edit</a>
-                {!! Form::open(array('url' => 'dashboard/admin/religions/' . $value->id, 'class' => 'pull-right')) !!}
+                <a class="btn btn-xs btn-info" href="{{ URL::to('dashboard/admin/religions/' . $value->id . '/edit') }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+              </td><td>
+
+                {!! Form::open(array('url' => 'dashboard/admin/religions/' . $value->id)) !!}
                     {!! Form::hidden('_method', 'DELETE') !!}
-                    {!! Form::submit('Delete', array('class' => 'btn btn-warning')) !!}
+                    <button class="btn btn-xs btn-danger" onClick="return confirm('Are you sure want to delete?')" type="submit"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
                 {!! Form::close() !!}
             </td>
         </tr>

@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Student, App\Faculty;
+use App\Study, App\ProgramStudy;
+use App\AcademicRegistration, App\Religion;
+use Input, Session, Redirect, Hash;
 
 class StudentController extends Controller
 {
@@ -16,7 +20,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+      $students = Student::all();
+      return view('dashboard.admin.student.index', ['student' => $students]);
     }
 
     /**
@@ -26,7 +31,18 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+      $faculties = Faculty::lists('faculty_name', 'faculty_code');
+      $studies = Study::lists('study_name', 'id');
+      $programStudies = ProgramStudy::lists('name', 'id');
+      $academicRegistrations = AcademicRegistration::lists('academic_year', 'id');
+      $religions = Religion::lists('name', 'id');
+      return view('dashboard.admin.student.create', [
+        'faculty' => $faculties,
+        'study' => $studies,
+        'programStudy' => $programStudies,
+        'academicRegistration' => $academicRegistrations,
+        'religion' => $religions,
+         ]);
     }
 
     /**
@@ -36,7 +52,24 @@ class StudentController extends Controller
      */
     public function store()
     {
-        //
+      $students = new Student;
+      $students->nim = Input::get('nim');
+      $students->name = Input::get('name');
+      $students->classroom = Input::get('classroom');
+      $students->faculty_code = Input::get('faculty_code');
+      $students->study_id = Input::get('study_id');
+      $students->program_study_id = Input::get('program_study_id');
+      $students->academic_registration_id = Input::get('academic_registration_id');
+      $students->email = Input::get('email');
+      $students->password = Hash::make(Input::get('password'));
+      $students->religion_id = Input::get('religion_id');
+      $students->address = Input::get('address');
+      $students->phone = Input::get('phone');
+      $students->comments = Input::get('comments');
+      $students->active = Input::get('active');
+      $students->save();
+      Session::flash('message', 'You have successfully added student');
+      return Redirect::to('dashboard/admin/students');
     }
 
     /**

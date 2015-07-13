@@ -57,6 +57,7 @@ return [
 
     'students' => 'Students',
     'new_student' => 'New Student',
+    'update_student' => 'Update Student',
     'nim' => 'NIM',
     'classroom' => 'Class Room',
 

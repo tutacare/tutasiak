@@ -91,7 +91,20 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+      $students = Student::find($id);
+      $faculties = Faculty::lists('faculty_name', 'faculty_code');
+      $studies = Study::lists('study_name', 'id');
+      $programStudies = ProgramStudy::lists('name', 'id');
+      $academicRegistrations = AcademicRegistration::lists('academic_year', 'id');
+      $religions = Religion::lists('name', 'id');
+      return view('dashboard.admin.student.edit', [
+        'student' => $students,
+        'faculty' => $faculties,
+        'study' => $studies,
+        'programStudy' => $programStudies,
+        'academicRegistration' => $academicRegistrations,
+        'religion' => $religions,
+        ]);
     }
 
     /**

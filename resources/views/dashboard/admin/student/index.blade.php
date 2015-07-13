@@ -28,6 +28,7 @@
             <td>Address</td>
             <td>Phone</td>
             <td>Active</td>
+            <td>Comments</td>
             <td colspan="2">&nbsp;</td>
         </tr>
     </thead>
@@ -46,6 +47,7 @@
             <td>{{ $value->address }}</td>
             <td>{{ $value->phone }}</td>
             <td>{{ $value->active }}</td>
+            <td>{{ $value->comments }}</td>
             <td>
                 <a class="btn btn-xs btn-info" href="{{ URL::to('dashboard/admin/students/' . $value->id . '/edit') }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
               </td><td>
